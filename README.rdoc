@@ -1,6 +1,6 @@
 = whaler
 
-Description goes here.
+This is an example application to show how you can generate letters from templates in Ruby with Prawn.
 
 == Copyright
 
