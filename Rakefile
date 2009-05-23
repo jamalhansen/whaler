@@ -70,7 +70,7 @@ namespace :letter do
   task :generate do
     $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
     require 'whaler'
-    count = ENV['count'] || 3
+    count = ENV['count'].to_i || 3
     customers = Whaler::CustomerBuilder.with_limit(count).get
     storage_service = Whaler::StorageService.new
     Whaler::LetterGenerator.generate(customers, storage_service)
