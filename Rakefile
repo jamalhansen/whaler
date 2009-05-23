@@ -73,8 +73,7 @@ namespace :letter do
     count = ENV['count'] || 3
     customers = Whaler::CustomerBuilder.with_limit(count).get
     storage_service = Whaler::StorageService.new
-    generator = Whaler::LetterGenerator.new
-    generator.generate(customers, storage_service)
+    Whaler::LetterGenerator.generate(customers, storage_service)
   end
 end
 
